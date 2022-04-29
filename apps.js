@@ -1,19 +1,32 @@
 'use strict';
 
-function favoriteCar();{
-    let username = prompt("What is your favorite car?");{
-    console.log( 'Hi  ' + username);
-    }
-    favoriteCar();
-    let answer = prompt( "Hi "  + username + "  Do you like the M8 or M5?");
-    let submit;
 
-if (answer === "M8") {
-    submit = "You are a winner bro ";
-}else if(answer === "M5") {
-    submit = "I see you like baby cars";
-}else{
- submit = "why would you want anything else other then a bmw.";
+function favoriteCar(){
+    let carname = prompt("What is your favorite car?");
+        console.log(carname);
+    return carname;
 }
-    document.write('Hi '+ username + ' ' + submit,);
-    return username
+
+let carname = whatcar();
+
+function whatcar(){
+    let response = prompt("Hello " + carname + ". What bmw do you like?").toLowerCase();
+        console.log(response + " loop");
+    while(response !== "M8" && response !== "M5"){
+        console.log(response + " in loop");
+        response = prompt("Enter 'M8' or 'M5'.").toLowerCase();
+        console.log(response + " after prompt");
+    }
+
+    let car;
+
+    if(response === "M8"){
+        car = prompt("Great Bro, You picked the right car");
+        console.log(car + " cars");
+    }else{
+        alert("Wrong answer bro.");
+    }
+return car;
+}
+
+let car = whatcar();
