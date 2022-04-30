@@ -1,32 +1,39 @@
 'use strict';
 
 
-function favoriteCar(){
-    let carname = prompt("What is your favorite car?");
-        console.log(carname);
-    return carname;
+function greeting () {
+    let username = prompt("What is your favorite car?");
+    console.log(username);
+    if (username === "M8") {
+        console.log("Great choice!");
+    } else {
+        console.log("Wrong Choice " + username);
+    }
+    return username
+}
+function pickcar () {
+    let response;
+    while (response !== "bmw") {
+        response = prompt("What is your favorite bmw?").toLowerCase();
+        console.log(response);
+        if (response == "850") {
+            return response
+        }
+    }
 }
 
-let carname = whatcar();
-
-function whatcar(){
-    let response = prompt("Hello " + carname + ". What bmw do you like?").toLowerCase();
-        console.log(response + " loop");
-    while(response !== "M8" && response !== "M5"){
-        console.log(response + " in loop");
-        response = prompt("Enter 'M8' or 'M5'.").toLowerCase();
-        console.log(response + " after prompt");
+function picGenerator () {
+    let number = prompt("How many cars do you own? (1-5)");
+    console.log(number);
+    for (let i=0; i < number; i++){
+        document.write("<img src='https://via.placeholder.com/90'class='pictures'/>")
     }
-
-    let car;
-
-    if(response === "M8"){
-        car = prompt("Great Bro, You picked the right car");
-        console.log(car + " cars");
-    }else{
-        alert("Wrong answer bro.");
-    }
-return car;
 }
 
-let car = whatcar();
+let userName = greeting();
+document.write(userName);
+
+let userguess = pickcar();
+document.write("Great", userguess);
+
+picGenerator()
